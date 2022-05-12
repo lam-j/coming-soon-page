@@ -76,7 +76,7 @@ input {
 }
 
 input:focus {
-  outline-color: pink;
+  outline-color: lightBlue;
 }
 
 button {
@@ -100,22 +100,27 @@ button:hover {
     background-image: none;
 }
 
-p.invalid {
-    color: var(--softRed);
+.invalid {
     display: none;
+}
+
+.invalid.active {
+    display: block;
+}
+
+.invalid p {
+    color: var(--softRed);
     font-size: 12px;
     position: relative;
     left: 30px;
 }
 
-img.invalid {
-    display: none;
+.invalid img {
     height: 20px;
     width: auto;
     position: relative;
     left: 200px;
-    top: -33px;
-    /* need to make these more responsive */
+    top: -70px;
 }
 
 .invalid input:focus {
@@ -205,5 +210,20 @@ img.invalid {
 
     button img {
         height: 30px;
+    }
+
+    .invalid p {
+        color: var(--softRed);
+        font-size: 12px;
+        position: relative;
+        left: -100px;
+    }
+
+    .invalid img {
+        height: 25px;
+        width: auto;
+        position: relative;
+        left: 20px;
+        top: -90px;
     }
 }
