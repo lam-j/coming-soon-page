@@ -1,0 +1,209 @@
+:root {
+    --desaturatedRed: hsl(0, 36%, 70%);
+    --softRed: hsl(0, 93%, 68%);
+}
+
+body {
+    background-image: url("images/bg-pattern-desktop.svg");
+    color: var(--desaturatedRed);
+    font-family: 'Josefin Sans', sans-serif;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+h1 {
+    color: black;
+    font-size: 3.5rem;
+    letter-spacing: 1.5rem;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+.light-text {
+    color: var(--desaturatedRed);
+    font-weight: 300;
+}
+
+.info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    margin: 5% 20% 5% 20%;
+    min-height: 100%;
+    min-width: 60%;
+}
+
+.hero-desktop img {
+    min-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.hero-mobile {
+    display: none;
+}
+
+.info-body {
+    line-height: 1.7rem;
+    margin-right: 10%;
+}
+
+.cta {
+    margin-top: 7%;
+}
+
+/* Form CSS */
+
+input {
+    background-color: transparent;
+    border: 1px solid hsl(0, 36%, 80%);
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 15px 30% 15px 25px;
+}
+
+::placeholder {
+    color: hsl(0, 36%, 85%);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+input:focus {
+  outline-color: pink;
+}
+
+button {
+    color: none;
+    background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px hsl(0, 40%, 92%);
+    padding: 15px 40px;
+    position: relative;
+    left: -40px;
+    top: 1px;
+}
+
+button img {
+    height: 15px;
+}
+
+button:hover {
+    background-color: hsl(0, 80%, 90%);
+    background-image: none;
+}
+
+p.invalid {
+    color: var(--softRed);
+    display: none;
+    font-size: 12px;
+    position: relative;
+    left: 30px;
+}
+
+img.invalid {
+    display: none;
+    height: 20px;
+    width: auto;
+    position: relative;
+    left: 200px;
+    top: -33px;
+    /* need to make these more responsive */
+}
+
+.invalid input:focus {
+  outline-color: var(--softRed);
+}
+/* Media Queries */
+
+/* - need to make background image size cover when screen is larger than a certain size */
+@media (min-width: 1390px) {
+    body {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: #FFF4F4;
+        background-image: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 1fr, 2fr;
+        min-height: 640px;
+        min-width: 360px;
+        max-height: 640px;
+        max-width: 360px;
+    }
+
+    .info-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .logo {
+        margin: 7% 10%;
+    }
+
+    .info-container {
+        margin: 10% 8% 10% 10%;
+        padding-bottom: 100px;
+        text-align: center;
+    }
+    .info-body {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-mobile {
+        display: block;
+    }
+    .hero-mobile img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .cta {
+        padding-top: 10px;
+    }
+
+    /* Form CSS */
+
+    input {
+        border-radius: 45px;
+        font-size: 1.4rem;
+        padding: 30px 30px 25px 30px;
+        width: 60%;
+    }
+
+    ::placeholder {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.4rem;
+    }
+
+    button {
+        border-radius: 45px;
+        padding: 20px 40px;
+        position: relative;
+        top: 8px;
+        left: -50px;
+    }
+
+    button img {
+        height: 30px;
+    }
+}
